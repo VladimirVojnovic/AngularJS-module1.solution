@@ -9,13 +9,13 @@ function LaunchCheckController($scope){
   $scope.Checker = function () {
     var stringDishes = $scope.Dishes;
     str.trim(stringDishes);
-    var message = "";
-    if (stringDishes="") {message = "Please enter data first"}
+    var LaunchMessage = "";
+    if (stringDishes="") {LaunchMessage = "Please enter data first"}
     else {var MenuItems = stringDishes.split(",");};
 
 
-    if (MenuItems.length > 3) {message = "Too much!"}
-    else {message = "Enjoy!"};
+    if (MenuItems.length > 3) {LaunchMessage = "Too much!"}
+    else {LaunchMessage = "Enjoy!"};
 
   };
     //console.log($injector.annotate(LaunchCheckController));
