@@ -18,7 +18,7 @@ function LaunchCheckController($scope, $injector){
     else {message = "Enjoy!"};
 
   };
-    console.log($injector.annotate(LaunchCheckController));
+   // console.log($injector.annotate(LaunchCheckController));
 };
 
 })();
