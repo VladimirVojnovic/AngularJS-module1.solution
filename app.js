@@ -4,8 +4,8 @@
 angular.module('LaunchCheck',[])
 .controller('LaunchCheckController', LaunchCheckController);
 
-LaunchCheckController.$inject = ['$scope'];
-function LaunchCheckController($scope){
+LaunchCheckController.$inject = ['$scope','$injector'];
+function LaunchCheckController($scope,$injector){
   $scope.Checker = function () {
     var stringDishes = $scope.Dishes;
     str.trim(stringDishes);
@@ -18,7 +18,7 @@ function LaunchCheckController($scope){
     else {LaunchMessage = "Enjoy!"};
 
   };
-    //console.log($injector.annotate(LaunchCheckController));
+    console.log($injector.annotate(LaunchCheckController));
 }
 
 })();
