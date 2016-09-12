@@ -1,11 +1,11 @@
 (function(){
 'use strict';
 
-angular.module('LaunchCheck',[]);
+angular.module('LaunchCheck',[])
 .controller('LaunchCheckController', LaunchCheckController);
 
 LaunchCheckController.$inject = ['$scope'];
-function LaunchCheckController($scope, $injector){
+function LaunchCheckController($scope){
   $scope.Checker = function () {
     var stringDishes = $scope.Dishes;
     str.trim(stringDishes);
@@ -18,7 +18,7 @@ function LaunchCheckController($scope, $injector){
     else {message = "Enjoy!"};
 
   };
-   // console.log($injector.annotate(LaunchCheckController));
-};
+    //console.log($injector.annotate(LaunchCheckController));
+}
 
 })();
