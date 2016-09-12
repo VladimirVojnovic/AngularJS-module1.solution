@@ -2,7 +2,7 @@
 'use strict';
 
 angular.module('LaunchCheck',[])
-.controller('LaunchCheckController', LaunchCheckController);
+.controller('LaunchCheckController', LaunchCheckController($scope));
 
 LaunchCheckController.$inject = ['$scope','$injector'];
 function LaunchCheckController($scope,$injector){
