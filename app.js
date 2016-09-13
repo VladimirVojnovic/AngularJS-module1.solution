@@ -3,18 +3,17 @@
 
 angular.module('LaunchCheck',[])
 .controller('LaunchCheckController', LaunchCheckController);
-
 LaunchCheckController.$inject = ['$scope'];
 function LaunchCheckController($scope){
   $scope.LaunchMessage = "";
   $scope.Dishes = "";
-  var MenuItems = [];
-  $scope.Checker = function (Dishes) {
+  $scope.Checker = function (MenuItems) {
     var stringDishes = $scope.Dishes.trim();
-    if (stringDishes="") {$scope.LaunchMessage = "Please enter data first"}
-    else {MenuItems = stringDishes.split(",")};
+    if (stringDishes = "") {$scope.LaunchMessage = "Please enter data first"}
+    else {var MenuItems = stringDishes.split(",");
     if (MenuItems.length > 3) {$scope.LaunchMessage = "Too much!"}
     else {$scope.LaunchMessage = "Enjoy!"};
+    };
 
   };
 
