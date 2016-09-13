@@ -7,13 +7,14 @@ LaunchCheckController.$inject = ['$scope'];
 function LaunchCheckController($scope){
   $scope.LaunchMessage = "";
   $scope.Dishes = "";
-  $scope.Checker = function (MenuItems) {
-    var stringDishes = $scope.Dishes.trim();
-    if (stringDishes = "") {$scope.LaunchMessage = "Please enter data first"}
-    else {var MenuItems = stringDishes.split(",");
+  $scope.Checker = function (list) {
+//    var stringDishes = $scope.Dishes.trim();
+    list = list.split(',').filter(str => /\S/.test(str));
+    if (Dishes.trim() = "") {$scope.LaunchMessage = "Please enter data first"}
+    else {
     if (MenuItems.length > 3) {$scope.LaunchMessage = "Too much!"}
     else {$scope.LaunchMessage = "Enjoy!"};
-    };
+    }
 
   };
 
