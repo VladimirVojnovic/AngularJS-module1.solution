@@ -7,7 +7,8 @@ LunchCheckController.$inject = ['$scope'];
    $scope.listOfFood = "";
    $scope.checkLunchResult = "";
    $scope.checkLunch = function(list){
-     list = list.split(',').filter(str => /\S/.test(str));/*triend arrow function*/
+     list = list.split(',');
+     list.filter(str => /\S/.test(str));/*triend arrow function*/
      //list = list.split(',').filter(function(str){return /\S/.test(str)} );
      if(list.length > 3){
        $scope.checkLunchResult = "Too much!"
