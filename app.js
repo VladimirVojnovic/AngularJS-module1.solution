@@ -10,10 +10,10 @@ function LaunchCheckController($scope){
 //    var stringDishes = $scope.Dishes.trim();
     list = list.trim();
     list = list.split(',');
-    list = list.filter(str => /\S/.test(str));
+    list = list.removeAll(Arrays.asList("", null));
     if (list.length > 3) {$scope.LaunchMessage = "Too much!"}
         else {$scope.LaunchMessage = "Enjoy!"};
-    if ($scope.Dishes = "") {$scope.LaunchMessage = "Please enter the data first!"}
+    if ($scope.Dishes == "") {$scope.LaunchMessage = "Please enter the data first!"}
   };
   };
 
