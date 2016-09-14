@@ -1,7 +1,7 @@
 (function(){
 'use strict';
-angular.module('LaunchCheck',[])
-.controller('LaunchCheckController', LaunchCheckController);
+angular.module('LunchCheck',[])
+.controller('LunchCheckController', LaunchCheckController);
 LaunchCheckController.$inject = ['$scope'];
 function LaunchCheckController($scope){
   $scope.LaunchMessage = "";
