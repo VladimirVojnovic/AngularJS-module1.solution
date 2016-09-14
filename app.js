@@ -10,9 +10,9 @@ function LaunchCheckController($scope){
     var stringDishes = Dishes.trim();
     var MenuItems = stringDishes.split(',').filter(str => /\S/.test(str));
 
-console.log(MenuItems);
-console.log(stringDishes);
-console.log($scope.Dishes);
+// console.log(MenuItems);
+// console.log(stringDishes);
+// console.log($scope.Dishes);
       //stringDishes.removeAll(Arrays.asList("", null));
     if (MenuItems.length > 3) {$scope.LaunchMessage = "Too much!"}
         else {$scope.LaunchMessage = "Enjoy!"};
@@ -20,5 +20,5 @@ console.log($scope.Dishes);
   };
   };
 
-  //console.log($injector.annotate(LaunchCheckController));
+  console.log($injector.annotate(LaunchCheckController));
 })();
