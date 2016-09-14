@@ -3,11 +3,13 @@
   <head>
     <title>Lunch Checker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="./angular.min.js"></script>
-    <script type="text/javascript" src="./app.js"></script>
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <style>
       .message { font-size: 1.3em; font-weight: bold; }
+      .RedFont  {color: red}
+      .GreenFont  {color: green}
+      .RedBorder  {border-color: red}
+      .GreenBorder  {border-color: green}
     </style>
   </head>
 <body ng-controller="LunchCheckController">
@@ -18,14 +20,16 @@
        ng-model="Dishes"
        type="text"
        placeholder="list comma separated dishes you usually have for lunch"
-       class="form-control">
+       class="form-control" ng-class="borderColor">
      </div>
      <div class="form-group">
        <button ng-click = "Checker(Dishes);" class="btn btn-default">Check If Too Much</button>
      </div>
-     <div class="form-group message">
+     <div class="form-group message" ng-class="fontColor">
        {{LaunchMessage}}
      </div>
 </div>
+<script type="text/javascript" src="./angular.min.js"></script>
+<script type="text/javascript" src="./app.js"></script>
 </body>
 </html>

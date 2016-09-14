@@ -9,16 +9,21 @@ function LaunchCheckController($scope){
   $scope.Checker = function (Dishes) {
     var stringDishes = Dishes.trim();
     var MenuItems = stringDishes.split(',').filter(str => /\S/.test(str));
-
-// console.log(MenuItems);
-// console.log(stringDishes);
-// console.log($scope.Dishes);
-      //stringDishes.removeAll(Arrays.asList("", null));
-    if (MenuItems.length > 3) {$scope.LaunchMessage = "Too much!"}
-        else {$scope.LaunchMessage = "Enjoy!"};
-    if (Dishes == "") {$scope.LaunchMessage = "Please enter the data first!"}
+    if (MenuItems.length > 3) {
+      $scope.LaunchMessage = "Too much!"
+      $scope.fontColor = "GreenFont";
+      $scope.borderColor = "GreenBorder";
+    }
+        else {
+          $scope.LaunchMessage = "Enjoy!"
+          $scope.fontColor = "GreenFont";
+          $scope.borderColor = "GreenBorder";
+        };
+    if (Dishes == "") {
+      $scope.LaunchMessage = "Please enter the data first!"
+      $scope.fontColor = "RedFont";
+      $scope.borderColor = "RedBorder";
+      }
   };
   };
-
-  console.log($injector.annotate(LunchCheckController));
 })();
