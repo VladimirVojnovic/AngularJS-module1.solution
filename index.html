@@ -8,26 +8,28 @@
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <style>
       .message { font-size: 1.3em; font-weight: bold; }
+      .bad{ color: #ef5350 }
+      .good{ color: #00e676 }
+      .greenBorder { border-color: #00e676 }
+      .redBorder { border-color: #ef5350 }
     </style>
   </head>
-<body>
+<body ng-controller="LunchCheckController">
    <div class="container">
      <h1>Lunch Checker</h1>
-     <div ng-controller='LaunchCheckController'>
+
          <div class="form-group">
-             <input id="lunch-menu"
-             ng-model="Dishes"
-             type="text"
+             <input id="lunch-menu" type="text"
              placeholder="list comma separated dishes you usually have for lunch"
-             class="form-control">
+             class="form-control" ng-model="listOfFood" ng-class="changeBorder">
          </div>
          <div class="form-group">
-             <button ng-click = "Checker(Dishes);" class="btn btn-default">Check If Too Much</button>
+             <button class="btn btn-default" ng-click="checkLunch(listOfFood);">Check If Too Much</button>
          </div>
-         <div class="form-group message">
-           {{LaunchMessage}}
+         <div class="form-group message" ng-class="changeFont">
+           {{checkLunchResult}}
          </div>
    </div>
-</div>
+
 </body>
 </html>

@@ -1,25 +1,27 @@
 (function(){
 'use strict';
-
-angular.module('LaunchCheck',[])
-.controller('LaunchCheckController', LaunchCheckController);
-LaunchCheckController.$inject = ['$scope'];
-function LaunchCheckController($scope){
-  $scope.LaunchMessage = "";
-  $scope.Dishes = "";
-  $scope.Checker = function (list) {
-//    var stringDishes = $scope.Dishes.trim();
-    list = list.split(',').filter(str => /\S/.test(str));
-    if (Dishes.trim() = "") {$scope.LaunchMessage = "Please enter data first"}
-    else {
-    if (MenuItems.length > 3) {$scope.LaunchMessage = "Too much!"}
-    else {$scope.LaunchMessage = "Enjoy!"};
-    }
-
-  };
-
-
-  //console.log($injector.annotate(LaunchCheckController));
-};
-
+angular.module('LunchCheck',[])
+ .controller('LunchCheckController', LunchCheckController);
+LunchCheckController.$inject = ['$scope'];
+ function LunchCheckController ($scope){
+   $scope.listOfFood = "";
+   $scope.checkLunchResult = "";
+   $scope.checkLunch = function(list){
+     list = list.split(',').filter(str => /\S/.test(str));/*triend arrow function*/
+     //list = list.split(',').filter(function(str){return /\S/.test(str)} );
+     if(list.length > 3){
+       $scope.checkLunchResult = "Too much!"
+       $scope.changeFont = "bad";
+     } else {
+       $scope.checkLunchResult = "Enjoy!"
+       $scope.changeFont = "good";
+     }
+     if($scope.listOfFood != ""){
+       $scope.changeBorder = "greenBorder";
+     } else {
+       $scope.changeBorder = "redBorder";
+       $scope.checkLunchResult = "";
+     }
+   };
+ };
 })();
