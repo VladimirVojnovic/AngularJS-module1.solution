@@ -9,10 +9,14 @@ function LaunchCheckController($scope){
   $scope.Checker = function (Dishes) {
     var stringDishes = Dishes.trim();
     var MenuItems = stringDishes.split(',');
+console.log(MenuItems);
+console.log(stringDishes);
+console.log(Dishes);
+console.log($scope.Dishes);
       //stringDishes.removeAll(Arrays.asList("", null));
     if (MenuItems.length > 3) {$scope.LaunchMessage = "Too much!"}
         else {$scope.LaunchMessage = "Enjoy!"};
-    if ($scope.Dishes == "") {$scope.LaunchMessage = "Please enter the data first!"}
+    if (Dishes == "") {$scope.LaunchMessage = "Please enter the data first!"}
   };
   };
 
