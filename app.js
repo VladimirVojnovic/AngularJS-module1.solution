@@ -8,7 +8,9 @@ function LaunchCheckController($scope){
   $scope.Dishes = "";
   $scope.Checker = function (Dishes) {
     var stringDishes = Dishes.trim();
+    stringDishes =  stringDishes.filter(str => /\S/.test(str));
     var MenuItems = stringDishes.split(',');
+
 console.log(MenuItems);
 console.log(stringDishes);
 console.log(Dishes);
