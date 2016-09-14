@@ -20,5 +20,5 @@ function LaunchCheckController($scope){
   };
   };
 
-  console.log($injector.annotate(LaunchCheckController));
+  console.log($injector.annotate(LunchCheckController));
 })();
