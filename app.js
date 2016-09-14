@@ -14,7 +14,7 @@ function LaunchCheckController($scope){
     if (list.length > 3) {$scope.LaunchMessage = "Too much!"}
         else {$scope.LaunchMessage = "Enjoy!"};
     if ($scope.Dishes = "") {$scope.LaunchMessage = "Please enter the data first!"}
-    }
+    };
   };
 
   //console.log($injector.annotate(LaunchCheckController));
